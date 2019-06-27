@@ -27,7 +27,7 @@ def pressSpace():
 def imageGrab():
     x1 = Cordinates.dinosaur[0] + 50 # 70 is the distance
     y1 = Cordinates.dinosaur[1] 
-    x2 = x1 + 60
+    x2 = x1 + 80
     y2 = Cordinates.dinosaur[1] + 35
     box = (x1, y1, x2, y2)
     image = ImageGrab.grab(box)
@@ -38,10 +38,13 @@ def imageGrab():
 
 def main():
     restartGame()
-    while True:
-        # imageGrab()
-        if(imageGrab() != 2347):
-            pressSpace()
-            time.sleep(0.1)
+    try:
+        while True:
+            # imageGrab()
+            if(imageGrab() != 3047):
+                pressSpace()
+                time.sleep(0.1)
+    except KeyboardInterrupt:
+        print("Program stopped")
 
 main()
